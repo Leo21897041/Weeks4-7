@@ -1,8 +1,9 @@
-using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 public class PowerSwitch : MonoBehaviour
 {
+    public GameObject objectToTurnOn;
+
     public bool isOn;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -16,18 +17,19 @@ public class PowerSwitch : MonoBehaviour
     {
         if (isOn == true)
         {
-        gameObject.SetActive(true);
+            objectToTurnOn.SetActive(true);
         }
+
         if (isOn == false)
         {
-        gameObject.SetActive(false);
+            objectToTurnOn.SetActive(false);
         }
     }
-    public void TurnedOn()
+    public void OnClickTurnOn()
     {
         isOn = true;
     }
-    public void TurnedOff()
+    public void OnClickTurnOff()
     { 
         isOn = false;
     }
