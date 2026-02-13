@@ -2,15 +2,17 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 
-public class CanDescription : MonoBehaviour
+public class CookieDescription : MonoBehaviour
 {
-    public GameObject can;
+    public GameObject cookie;
 
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
+    // Update is called once per frame
     void Update()
     {
         Vector2 currentMousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
@@ -19,11 +21,11 @@ public class CanDescription : MonoBehaviour
 
         if (distance < 1)
         {
-            can.SetActive(true);
+            cookie.SetActive(true);
         }
-        else 
+        else
         {
-            can.SetActive(false);
+            cookie.SetActive(false);
         }
     }
 }

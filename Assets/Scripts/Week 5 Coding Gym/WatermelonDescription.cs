@@ -2,15 +2,17 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 
-public class CanDescription : MonoBehaviour
+public class WatermelonDescription : MonoBehaviour
 {
-    public GameObject can;
+    public GameObject watermelonText;
 
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
     }
 
+    // Update is called once per frame
     void Update()
     {
         Vector2 currentMousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
@@ -18,12 +20,12 @@ public class CanDescription : MonoBehaviour
         float distance = Vector2.Distance(transform.position, currentMousePosition);
 
         if (distance < 1)
-        {
-            can.SetActive(true);
+        { 
+        watermelonText.SetActive(true);
         }
-        else 
-        {
-            can.SetActive(false);
+        if (distance < 1)
+        { 
+        watermelonText.SetActive(false);
         }
     }
 }
