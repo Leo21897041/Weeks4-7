@@ -13,6 +13,8 @@ public class MovementMainShip : MonoBehaviour
     public bool isRotatingRight;
     public bool isRotatingLeft;
 
+    public Transform mainShip;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

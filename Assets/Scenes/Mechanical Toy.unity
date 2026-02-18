@@ -346,6 +346,7 @@ MonoBehaviour:
   isMovingForward: 0
   isRotatingRight: 0
   isRotatingLeft: 0
+  mainShip: {fileID: 0}
 --- !u!212 &172633585
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -465,6 +466,7 @@ MonoBehaviour:
   duration: 2
   timer: 0
   smallShipPrefab: {fileID: 2698773515997351817, guid: 2f6c5387429a00b4dae88e744c87ddd0, type: 3}
+  mainShip: {fileID: 172633586}
 --- !u!1 &257607483
 GameObject:
   m_ObjectHideFlags: 0

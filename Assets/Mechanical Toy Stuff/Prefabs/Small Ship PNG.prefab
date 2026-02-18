@@ -101,6 +101,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smallShipMoveSpeed: 3
-  destroyDuration: 4
-  destroyTimer: 4.41
-  smallShipPosition: {x: 0, y: 0, z: 0}
+  offScreen: 30
+  collisionDetectionDistance: 1.5
+  mainShip: {fileID: 0}

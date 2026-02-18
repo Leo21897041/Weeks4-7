@@ -3,8 +3,12 @@ using UnityEngine;
 public class MovementSmallShip : MonoBehaviour
 {
     public float smallShipMoveSpeed;
+    public float offScreen = 30f;
+    public float collisionDetectionDistance = 1f;
 
     private Vector3 smallShipPosition;
+
+    public Transform mainShip;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,9 +26,16 @@ public class MovementSmallShip : MonoBehaviour
 
         Vector3 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
 
-        if (screenPosition.y > Screen.height + 30)
+        if (screenPosition.y > Screen.height + offScreen)
         {
             Destroy(gameObject);
+        }
+
+        float distanceToMainShip = Vector2.Distance(transform.position, mainShip.position);
+
+        if (distanceToMainShip < collisionDetectionDistance)
+        {
+            Destroy(mainShip.gameObject);
         }
     }
 }

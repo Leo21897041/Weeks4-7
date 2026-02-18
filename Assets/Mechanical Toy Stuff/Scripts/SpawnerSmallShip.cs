@@ -8,6 +8,7 @@ public class SpawnerSmallShip : MonoBehaviour
     public float timer;
 
     public GameObject smallShipPrefab;
+    public Transform mainShip;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,8 +25,9 @@ public class SpawnerSmallShip : MonoBehaviour
         {
             GameObject smallShipSpawned = Instantiate(smallShipPrefab, transform.position, Quaternion.identity);
 
+            smallShipSpawned.GetComponent<MovementSmallShip>().mainShip = mainShip;
+
             timer = 0f;
         }
-
     }
 }
