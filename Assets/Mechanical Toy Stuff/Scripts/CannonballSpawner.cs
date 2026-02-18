@@ -2,15 +2,13 @@ using UnityEngine;
 
 public class CannonballSpawner : MonoBehaviour
 {
-    public GameObject cannonball;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject cannonballPrefab;
+    public Transform crosshairLocation;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -18,8 +16,14 @@ public class CannonballSpawner : MonoBehaviour
 
     public void OnClickFiringCannonballs()
     {
-        Instantiate(cannonball, transform.position, transform.rotation);
-        
+        GameObject newCannonball = Instantiate(cannonballPrefab, transform.position, transform.rotation);
+
+        newCannonball.GetComponent<MovementCannonball>().crosshairLocation = crosshairLocation;
+        newCannonball.GetComponent<MovementCannonball>().ShootCannonball();
+
         Debug.Log("FIRE!!");
     }
 }
+
+
+// Start is called once before the first execution of Update after the MonoBehaviour is created

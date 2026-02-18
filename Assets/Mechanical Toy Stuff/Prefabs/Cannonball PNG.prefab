@@ -101,4 +101,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cannonballSpeed: 3
+  isShot: 0
   crosshairLocation: {fileID: 0}
