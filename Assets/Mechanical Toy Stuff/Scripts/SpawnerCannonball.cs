@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class CannonballSpawner : MonoBehaviour
+public class SpawnerCannonball : MonoBehaviour
 {
     public GameObject cannonballPrefab;
     public Transform crosshairLocation;
+
     void Start()
     {
         
@@ -24,6 +25,3 @@ public class CannonballSpawner : MonoBehaviour
         Debug.Log("FIRE!!");
     }
 }
-
-
-// Start is called once before the first execution of Update after the MonoBehaviour is created
