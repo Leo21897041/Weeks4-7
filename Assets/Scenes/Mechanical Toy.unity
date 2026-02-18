@@ -1509,6 +1509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cannonballPrefab: {fileID: 8916551613388389735, guid: b997d75a8c4abd14ea7bca887fbf4d01, type: 3}
   crosshairLocation: {fileID: 1804708423}
+  smallShip: {fileID: 7814042290305272832, guid: 2f6c5387429a00b4dae88e744c87ddd0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
