@@ -6,8 +6,8 @@ public class MovementMainShip : MonoBehaviour
     public float moveSpeed;
     public float rotateSpeed;
 
-    public Vector3 position;
-    public Vector3 rotation;
+    public Vector3 mainShipPosition;
+    public Vector3 mainShipRotation;
 
     public bool isMovingForward;
     public bool isRotatingRight;
@@ -22,13 +22,13 @@ public class MovementMainShip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        position = transform.position;
-        rotation = transform.eulerAngles;
+        mainShipPosition = transform.position;
+        mainShipRotation = transform.eulerAngles;
 
         //MOVING FORWARDS
         if (Keyboard.current.upArrowKey.isPressed == true)
         {
-            position += transform.up * moveSpeed * Time.deltaTime;
+            mainShipPosition += transform.up * moveSpeed * Time.deltaTime;
             isMovingForward = true;
         }
         else 
@@ -39,7 +39,7 @@ public class MovementMainShip : MonoBehaviour
         //TURNING RIGHT
         if (Keyboard.current.rightArrowKey.isPressed == true)
         {
-            rotation.z -= rotateSpeed * Time.deltaTime;
+            mainShipRotation.z -= rotateSpeed * Time.deltaTime;
             isRotatingRight = true;
         }
         else
@@ -50,7 +50,7 @@ public class MovementMainShip : MonoBehaviour
         //TURNING LEFT
         if (Keyboard.current.leftArrowKey.isPressed == true)
         {
-            rotation.z += rotateSpeed * Time.deltaTime;
+            mainShipRotation.z += rotateSpeed * Time.deltaTime;
             isRotatingLeft = true;
         }
         else
@@ -58,7 +58,7 @@ public class MovementMainShip : MonoBehaviour
             isRotatingLeft = false;
         }
 
-        transform.position = position;
-        transform.eulerAngles = rotation;
+        transform.position = mainShipPosition;
+        transform.eulerAngles = mainShipRotation;
     }
 }

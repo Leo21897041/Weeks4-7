@@ -4,7 +4,7 @@ public class PowerSlider : MonoBehaviour
 {
     public float currentSliderValue;
 
-    Vector3 crosshairPosition;
+    Vector2 crosshairPosition;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,10 +21,10 @@ public class PowerSlider : MonoBehaviour
     {
         currentSliderValue = value;
 
-        crosshairPosition = transform.position;
+        crosshairPosition = transform.localPosition;
 
         crosshairPosition.x = currentSliderValue;
 
-        transform.position = crosshairPosition;
+        transform.localPosition = crosshairPosition;
     }
 }
