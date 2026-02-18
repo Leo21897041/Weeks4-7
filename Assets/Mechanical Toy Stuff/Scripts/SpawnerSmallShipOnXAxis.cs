@@ -1,15 +1,13 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class SpawnerSmallShip : MonoBehaviour
+public class SpawnerSmallShipOnXAxis : MonoBehaviour
 {
     public float duration;
     public float timer;
 
-    public float spawnerHeight;
-    public float spawnerLeft;
-    public float spawnerRight;
+    public float spawnerWidth;
+    public float spawnerTop;
+    public float spawnerBottom;
 
     public GameObject smallShipPrefab;
     public Transform mainShip;
@@ -17,7 +15,7 @@ public class SpawnerSmallShip : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -27,9 +25,9 @@ public class SpawnerSmallShip : MonoBehaviour
 
         if (timer > duration)
         {
-            float randomSpotToSpawnShip = Random.Range(spawnerLeft, spawnerRight);
+            float randomSpotToSpawnShip = Random.Range(spawnerTop, spawnerBottom);
 
-            Vector2 spawnPosition = new Vector2(randomSpotToSpawnShip, spawnerHeight);
+            Vector2 spawnPosition = new Vector2(spawnerWidth, randomSpotToSpawnShip);
 
             GameObject smallShipSpawned = Instantiate(smallShipPrefab, spawnPosition, transform.rotation);
 

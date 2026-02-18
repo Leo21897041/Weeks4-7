@@ -26,7 +26,7 @@ public class MovementSmallShip : MonoBehaviour
 
         Vector3 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
 
-        if (screenPosition.y > Screen.height + offScreen)
+        if (screenPosition.y > Screen.height + offScreen || screenPosition.y < 0 - offScreen)
         {
             Destroy(gameObject);
         }

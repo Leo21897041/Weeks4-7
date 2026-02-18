@@ -101,6 +101,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smallShipMoveSpeed: 3
-  offScreen: 30
+  offScreen: 100
   collisionDetectionDistance: 1.5
   mainShip: {fileID: 0}
