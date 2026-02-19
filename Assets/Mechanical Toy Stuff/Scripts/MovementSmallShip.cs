@@ -12,7 +12,7 @@ public class MovementSmallShip : MonoBehaviour
     public float collisionDetectionDistance = 1f;
 
     //Variable to store the position of the small ship
-    private Vector2 smallShipPosition;
+    private Vector3 smallShipPosition;
 
     //A reference to the player sh[
     public Transform mainShip;
@@ -37,7 +37,8 @@ public class MovementSmallShip : MonoBehaviour
         Vector3 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
 
         //Checks if the small ship goes off either side of the screen
-        if (screenPosition.y > Screen.height + offScreen || screenPosition.y < 0 - offScreen)
+        if (screenPosition.x > Screen.width + offScreen || screenPosition.x < 0 - offScreen ||
+            screenPosition.y > Screen.height + offScreen || screenPosition.y < 0 - offScreen )
         {
             //Destroys the small ship clone
             Destroy(gameObject);

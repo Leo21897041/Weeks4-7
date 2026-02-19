@@ -19,7 +19,7 @@ public class PowerSlider : MonoBehaviour
     }
 
     //Run this method when the value of the slider changes
-    public void PowerSliderChangeValue(float value)
+    public void PowerSliderChangeValueRightCannon(float value)
     {
         //Saves the sliders vaue
         currentSliderValue = value;
@@ -29,6 +29,21 @@ public class PowerSlider : MonoBehaviour
 
         //Changes the x value of the Vector2 using the slider
         crosshairPosition.x = currentSliderValue;
+
+        //Set the new position to the position of the crosshair
+        transform.localPosition = crosshairPosition;
+    }
+
+    public void PowerSliderChangeValueLeftCannon(float value)
+    {
+        //Saves the sliders vaue
+        currentSliderValue = value;
+
+        //Gets the current position of the crosshair
+        crosshairPosition = transform.localPosition;
+
+        //Changes the x value of the Vector2 using the slider
+        crosshairPosition.x = -currentSliderValue;
 
         //Set the new position to the position of the crosshair
         transform.localPosition = crosshairPosition;
