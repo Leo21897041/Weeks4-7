@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class SpawnerSmallShipOnXAxis : MonoBehaviour
 {
+    //THIS SCRIPT IS THE SAME AS THE SpawnerSmallShip SCRIPT. THIS SCRIPT ONLY HAS A FEW VARIABLE CHANGED
+
     public float duration;
     public float timer;
 
@@ -12,13 +14,11 @@ public class SpawnerSmallShipOnXAxis : MonoBehaviour
     public GameObject smallShipPrefab;
     public Transform mainShip;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
@@ -27,13 +27,17 @@ public class SpawnerSmallShipOnXAxis : MonoBehaviour
         {
             float randomSpotToSpawnShip = Random.Range(spawnerTop, spawnerBottom);
 
+            //Put the random value variable in the y position of the Vector2
             Vector2 spawnPosition = new Vector2(spawnerWidth, randomSpotToSpawnShip);
 
+            //The prefab will spawn on a random spot on the y axis
             GameObject smallShipSpawned = Instantiate(smallShipPrefab, spawnPosition, transform.rotation);
 
             smallShipSpawned.GetComponent<MovementSmallShip>().mainShip = mainShip;
 
             timer = 0f;
+
+            duration = Random.Range(2f, 7f);
         }
     }
 }
